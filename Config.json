@@ -1,0 +1,22 @@
+{
+  "params":
+  {
+
+    "local_server":"mysql://root:@localhost/codingthunder",
+    "fb_url":"https://www.facebook.com/codingthunder",
+    "insta_url":"https://www.instagram.com/codingthunder",
+    "main_blog":"THE CODING THUNDER",
+    "made_fb":"https://www.facebook.com/ALexanderritik",
+    "made_insta":"https://www.Instgram.com/ALexanderritik",
+    "no_of_post":5,
+    "admin_user":"Ritik@gmail.com",
+    "admin_password":"hritik",
+    "uploader":"C:\\Users\\Alexander\\PycharmProjects\\blog with flask\\static"
+
+  }
+
+
+
+
+
+}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('  {{url_for('static',filename='img/home-bg.jpg')}}         ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Admin Panel</h1>
+            <span class="subheading">You can manage your post</span>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+  </header>
+       
+  <!-- Main Content -->
+
+    
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+	  <td><a href ="/edit/0"><button class="btn btn-primary ">Add a new Post</button></a></td>
+      
+	  <hr>
+	  <h1>Upload a File</h1>
+	  <form action="/uploader" method="POST" enctype="multipart/form-data">
+      <input type="file" name="filename">
+      <button class="btn btn-primary ><input type="submit" value=submit>Submit</button>
+      </form>	   
+	  
+	   <h3>Edit a Post</h3>
+	  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">slug</th>
+      <th scope="col">date</th>
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in posts %}
+	<tr>
+      <th scope="row">{{post.id}}</th>
+      <td>{{post.title}}</td>
+      <td>{{post.slug}}</td>
+      <td>{{post.date}}</td>
+      <td><a href ="/edit/{{post.id}}"><button class="btn btn-primary "> edit</button></a></td>
+      <td><a href ="/delete/{{post.id}}"><button class="btn btn-primary ">delete</button></a></td>
+      
+    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+      </div>
+    </div>
+  </div>
+      
+   <hr>
+  <td><a href ="/logout"><button class="btn btn-primary float-right ">logout</button></a></td> 																																			        
+ 
+ {% endblock %}
